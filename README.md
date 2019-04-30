@@ -1,5 +1,5 @@
 # Yolov3-convertor
-Convert voc and coco annotation xml file to yolo-darknet training file format 
+Convert Pascal VOC and COCO annotation xml file to yolo-darknet training file format. 
 ## Pascal VOC
 #### Get Pascal VOC data set
  To train YOLO you will need all of the VOC data from 2007 and 2012. You can find links to the data https://pjreddie.com/projects/pascal-voc-dataset-mirror/ . Or you can run:
@@ -54,5 +54,30 @@ voc_label.py
 ##### For Linux:
 ```git clone https://github.com/cocodataset/cocoapi```
 To install:
+* For Matlab, add coco/MatlabApi to the Matlab path (OSX/Linux binaries provided)
+* For Python, run "make" under coco/PythonAPI
+##### For windows:
+```git clone  https://github.com/philferriere/cocoapi```
 
+run:
+```
+PythonAPI/setup.py
+PythonAPI/pycocotools/coco.py
+```
+#### Extract person class
+put ```coco_convert/extract_person.py``` to ```PythonAPI/pycocotools/``` this``` extract_person.py``` is different from the VOC one. After running this program we will get the annotations in VOC format. Then run ```coco_convert/list.py``` to get a txt file which has all of the paths of images we want to train on or validate. 
+#### Generate labels for yolo
+Run ```coco_convert/voc_label.py``` to convert .xml format to the labels for yolo. This program is different from the VOC one.
+
+Directory structure of coco data set:
+```
+
+└── COCO
+    ├── images                                                            #images
+    │   ├── train2014
+    │   ├── val2014
+    └── labels                                                            #annotations in  yolo format
+        ├── train2014
+        ├── val2014
+```
  
