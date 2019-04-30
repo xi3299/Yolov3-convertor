@@ -1,5 +1,6 @@
 # Yolov3-convertor
-Convert Pascal VOC and COCO annotation xml file to yolo-darknet training file format. 
+* Convert Pascal VOC and COCO annotation xml file to yolo-darknet training file format. 
+* Extract person class from Pascal VOC data set and COCO data set.
 ## Pascal VOC
 #### Get Pascal VOC data set
  To train YOLO you will need all of the VOC data from 2007 and 2012. You can find links to the data https://pjreddie.com/projects/pascal-voc-dataset-mirror/ . Or you can run:
